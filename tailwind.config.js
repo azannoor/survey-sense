@@ -7,6 +7,10 @@ module.exports = {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(208.93deg, #E2EDFD -34.98%, #CAEDFF 104.14%)',
       },
+      colors: {
+        primary: '#3498DB',
+        paragraph: '#828282',
+      },
     },
   },
   variants: {

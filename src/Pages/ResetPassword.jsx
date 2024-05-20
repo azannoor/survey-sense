@@ -7,34 +7,29 @@ function ResetPassword() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       {/* Left Panel */}
-      <div className="sm:w-1/2 bg-white flex justify-center items-center mb-80">
-        <div className="w-[480px] h-32  ">
-          <h1 className="text-2xl font-medium  font-Lato">
-            Reset Your Password
-          </h1>
+      <div className="w-full lg:w-1/2 bg-white flex justify-center items-center p-4 lg:p-0">
+        <div className="w-full max-w-md mb-20">
+          <h1 className="text-2xl font-medium font-Lato">Reset Your Password</h1>
           <p className="font-Lato text-xs mt-4">
-            Enter the email address associated with your account and we{" "}
-            <br></br> will send you a link to reset your password
+            Enter the email address associated with your account and we
+            will send you a link to reset your password
           </p>
           <p className="font-Lato font-medium text-sm mt-4">Email:</p>
           <form>
             <div className="relative">
-              <div className="absolute mt-4 ml-3">
+              <div className="absolute top-2 left-3">
                 <Email />
-                </div>
               </div>
               <input
                 type="email"
-                className="w-[80%] h-10 border-[2px] border-[#CEE1FC] rounded-lg mt-2 text-xs px-9"
+                className="w-full h-10 border-2 border-[#CEE1FC] rounded-lg mt-2 pl-10 pr-2 text-xs"
                 placeholder="Enter your business email"
-              ></input>
-            
-
-            <button className="w-[50%] ml-16  h-10 bg-[#3498DB] text-white rounded-lg mt-11">
+              />
+            </div>
+            <button className="w-full lg:w-[50%] h-10 bg-[#3498DB] text-white rounded-lg mt-6">
               Continue
             </button>
-            
-            <p className="text-xs font-medium text-[#3498DB] mt-9 ml-36">
+            <p className="text-xs font-medium text-[#3498DB] mt-6 text-center lg:text-left">
               Back to Sign in
             </p>
           </form>
@@ -42,23 +37,14 @@ function ResetPassword() {
       </div>
 
       {/* Right Panel */}
-      <div className="lg:w-1/2 bg-custom-gradient relative">
-        <div className="h-full flex flex-col justify-center items-center sm:items-start sm:flex-row">
-          <div className="grid grid-cols-1 md:grid-cols-1  items-center w-full sm:w-auto sm:ml-11   relative">
-            {/* Image */}
-            <div className="justify-self-center absolute  ">
-              <img
-                src={icon}
-                alt="Description of image"
-                className="w-full sm:w-auto h-[101px] sm:h-[121px] mb-[350px] "
-              />
-            </div>
-
-            {/* Reset Button */}
-            <div className="justify-self-center mt-40  sm:mt-44">
-              <Reset className="w-full md:w-auto" />
-            </div>
-          </div>
+      <div className="w-full lg:w-1/2 bg-custom-gradient flex justify-center items-center relative">
+        <div className="flex flex-col items-center">
+          <img
+            src={icon}
+            alt="Description of image"
+            className=" lg:w-26 lg:h-32 mb-8 lg:mb-20"
+          />
+          <Reset className="w-16 lg:w-24" />
         </div>
       </div>
     </div>

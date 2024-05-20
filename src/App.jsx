@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ResetPassword from './Pages/ResetPassword';
+import CreateSurvey from './components/CreateSurvey';
 
 function App() {
   const count = useSelector((state) => state.counter.value);
@@ -12,7 +13,7 @@ function App() {
   return (
     <Router>
     <Routes>
-      <Route path="/" element={<ResetPassword/>} />
+      <Route path="/" element={<CreateSurvey/>} />
       
     </Routes>
   
