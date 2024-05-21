@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import DropDown from "../svg components/DropDown";
 import Search from "../svg components/Search";
 
-const CustomDropdown = ({ options, value, onChange }) => {
+const CustomDropdown = ({ options, value, onChange, placeholder }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState(value || "");
   const [hoveredOption, setHoveredOption] = useState(null);
@@ -35,7 +35,7 @@ const CustomDropdown = ({ options, value, onChange }) => {
         type="text"
         value={searchTerm}
         onChange={handleInputChange}
-        placeholder="Search or Select"
+        placeholder={placeholder}
         className="block w-full px-7 py-2 border-[1.5px] border-[#CEE1FC] rounded-lg focus:outline-none"
         onClick={handleArrowClick}
       />

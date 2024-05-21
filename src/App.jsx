@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ResetPassword from './Pages/ResetPassword';
+
 import CreateSurvey from './components/CreateSurvey';
 
 function App() {

@@ -70,17 +70,19 @@ const Form = () => {
             <CustomDropdown
               options={projectTypes}
               value={selectedProjectType}
+              placeholder="Survey category"
               onChange={(value) => setSelectedProjectType(value)}
             />
           </div>
 
           <div className="mb-4">
             <label htmlFor="language" className="block text-gray-700 mb-2 font-medium">
-              Select or search your language
+              Select language
             </label>
             <CustomDropdown
               options={languages}
               value={selectedLanguage}
+              placeholder="English"
               onChange={(value) => setSelectedLanguage(value)}
             />
           </div>
