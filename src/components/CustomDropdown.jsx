@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DropDown from "../svg components/DropDown";
+import Search from "../svg components/Search";
 
 const CustomDropdown = ({ options, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(value || "");
   const [hoveredOption, setHoveredOption] = useState(null);
 
   const filteredOptions = options.filter(option =>
     option.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  useEffect(() => {
+    setSearchTerm(value);
+  }, [value]);
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
@@ -18,7 +23,6 @@ const CustomDropdown = ({ options, value, onChange }) => {
     console.log("Selected option:", option);
     onChange(option);
     setIsOpen(false);
-    setSearchTerm("");
   };
 
   const handleArrowClick = () => {
@@ -26,20 +30,23 @@ const CustomDropdown = ({ options, value, onChange }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-full md:w-[140%]">
       <input
         type="text"
         value={searchTerm}
         onChange={handleInputChange}
         placeholder="Search or Select"
-        className="block md:w-full px-4 py-2 border-[1.5px] border-[#CEE1FC] rounded-lg focus:outline-none"
+        className="block w-full px-7 py-2 border-[1.5px] border-[#CEE1FC] rounded-lg focus:outline-none"
         onClick={handleArrowClick}
       />
+      <div className="absolute inset-y-0 left-2 flex items-center pr-2">
+        <Search />
+      </div>
       <div
-        className="absolute inset-y-0 right-0 flex items-center md:px-2 px-40 cursor-pointer"
+        className="absolute inset-y-0 right-0 flex items-center pr-6 cursor-pointer"
         onClick={handleArrowClick}
       >
-        <DropDown isOpen={isOpen}/>
+        <DropDown isOpen={isOpen} />
       </div>
       {isOpen && (
         <div className="absolute z-10 w-full max-h-60 overflow-y-auto bg-white border rounded-md mt-1">
