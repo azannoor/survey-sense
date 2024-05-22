@@ -46,7 +46,7 @@ const Form = () => {
       </div>
 
       {/* Form */}
-      <div className="flex w-full px-4 sm:px-32 mt-20">
+      <div className="flex w-full px-4 sm:px-32  mt-20">
         <form className="w-full max-w-xl" onSubmit={handleSubmit}>
           <h1 className="text-xl font-medium mb-4 text-primary">
             Create New Survey
